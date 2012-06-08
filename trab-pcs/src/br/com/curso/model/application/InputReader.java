@@ -82,6 +82,7 @@ public class InputReader {
 		
 		System.out.println(turma.getDisciplina().getCodigo() + " " + turma.getPeriodo());
 		turma.printAlunoNotas();
+		XMLGenerator.generate(curso);
 		
 			
 	}

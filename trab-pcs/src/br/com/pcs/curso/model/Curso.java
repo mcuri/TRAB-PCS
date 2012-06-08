@@ -1,11 +1,17 @@
 package br.com.pcs.curso.model;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public class Curso {
+public class Curso implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 76238739187987L;
 
 	/*Relação de alunos matriculados, estruturada na forma de um map String -> Aluno,
 	onde a chave é a matrícula do aluno e o valor de cada entrada é o objeto Aluno
