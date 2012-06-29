@@ -1,17 +1,16 @@
-package br.com.curso.model.application;
+package br.com.pcs.curso.service;
 
 import java.beans.XMLEncoder;
+import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
 
-
-public class XMLGenerator {
-
-	public static void generate(Object object) throws IOException{
+public class XMLEncoderToFile {
+	
+	public void generate(Object object) throws IOException{
 
 		XMLEncoder e = new XMLEncoder(
-			    			new ObjectOutputStream(
+						new BufferedOutputStream(
 			    			new FileOutputStream("Curso.xml")));
 		
 		e.writeObject(object);
