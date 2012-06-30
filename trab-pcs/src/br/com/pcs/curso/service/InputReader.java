@@ -14,6 +14,9 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.DomDriver;
+
 import br.com.pcs.curso.model.Aluno;
 import br.com.pcs.curso.model.Curso;
 import br.com.pcs.curso.model.Disciplina;
@@ -30,7 +33,7 @@ public class InputReader {
 		super();
 	}
 
-	public String readText() throws IOException{
+	public Object readText() throws IOException{
 		StringBuffer text = new StringBuffer();
 		String str;
 		while((str = buffer.readLine()) != null) {
@@ -62,7 +65,7 @@ public class InputReader {
 		System.out.println(turma.getDisciplina().getCodigo() + " " + turma.getPeriodo());
 		turma.printAlunoNotas();
 	
-		return text.toString();
+		return curso;
 	}
 	
 	String readFile() throws IOException {
@@ -136,21 +139,8 @@ public class InputReader {
 		System.out.println(turma.getDisciplina().getCodigo() + " " + turma.getPeriodo());
 		turma.printAlunoNotas();
 		
-		Iterator iterator = curso.getMatriculaAlunoMap().keySet().iterator();
-		System.out.println("Alunos:");
-		/*while(iterator.hasNext()){
-			String key = iterator.next().toString();
-			System.out.println(iterator.next().toString());
-			System.out.println(curso.getMatriculaAlunoMap().get(key).toString());
-		}*/
-		
-		JAXBContext context = JAXBContext.newInstance(Curso.class);
-		Marshaller marshaller = context.createMarshaller();
-		marshaller.marshal(curso, new FileOutputStream("curso.xml"));
-
-		//XMLEncoderToFile encoder = new XMLEncoderToFile();
-		//encoder.generate(curso);
-		
+		XStreamXMLEncoder encoder = new XStreamXMLEncoder();
+		encoder.encode(curso, "curso.xml");
 			
 	}
 }	

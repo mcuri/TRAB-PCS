@@ -7,7 +7,9 @@ import java.util.Set;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+@XStreamAlias("curso")
 public class Curso{
 
 	/*Relação de alunos matriculados, estruturada na forma de um map String -> Aluno,

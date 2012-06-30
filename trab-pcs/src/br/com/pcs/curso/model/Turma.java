@@ -5,6 +5,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+@XStreamAlias("turma")
 public class Turma {
 
 	private Disciplina disciplina;

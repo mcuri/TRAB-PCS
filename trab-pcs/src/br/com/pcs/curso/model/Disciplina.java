@@ -1,5 +1,8 @@
 package br.com.pcs.curso.model;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+@XStreamAlias("disciplina")
 public class Disciplina {
 
 	private String codigo;

@@ -3,6 +3,9 @@ package br.com.pcs.curso.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+@XStreamAlias("aluno")
 public class Aluno {
 
 	private String matricula;
