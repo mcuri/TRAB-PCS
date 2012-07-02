@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_32" class="java.beans.XMLDecoder"> 
+ <object class="br.com.pcs.curso.model.Curso"> 
+  <void property="codDisciplinaMap"> 
+   <void method="put"> 
+    <string>TIN0171</string> 
+    <object class="br.com.pcs.curso.model.Disciplina"> 
+     <void property="codigo"> 
+      <string>TIN0171</string> 
+     </void> 
+     <void property="nome"> 
+      <string>PROJETO E CONSTRUCAO DE SISTEMAS</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+ </object> 
+</java> 

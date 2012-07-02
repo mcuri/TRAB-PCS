@@ -1,5 +1,7 @@
 package br.com.pcs.curso.service;
 
+import java.beans.XMLEncoder;
+import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -49,12 +51,13 @@ public class InputReader {
 		curso.registrarDisciplina(disciplina);
 		
 		Turma turma = readTurma(lines[0], disciplina);
+		turma.setDisciplina(disciplina);
 		curso.registrarTurma(disciplina, turma.getPeriodo());
 
 		//reading alunos lines
 		for(int i = 1; i < lines.length; i++){
 			Aluno aluno = readAluno(lines[i]);
-			System.out.println("Aluno: " + aluno.getNome() + "Matricula: " + aluno.getMatricula());
+			System.out.println("Aluno: " + aluno.getNome() + " Matricula: " + aluno.getMatricula());
 			curso.registrarAluno(aluno.getMatricula(), aluno.getNome());
 	
 			List<Integer> notas = readNotas(lines[i]);
@@ -139,9 +142,6 @@ public class InputReader {
 		System.out.println(turma.getDisciplina().getCodigo() + " " + turma.getPeriodo());
 		turma.printAlunoNotas();
 		
-		XStreamXMLEncoder encoder = new XStreamXMLEncoder();
-		encoder.encode(curso, "curso.xml");
-			
 	}
 }	
 

@@ -5,9 +5,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XStreamAlias("turma")
+@XmlRootElement
 public class Turma {
 
 	private Disciplina disciplina;
@@ -17,6 +20,10 @@ public class Turma {
 	aluno naquela disciplina/período.*/
 	Map<Aluno, List<Integer>> alunoNotas;
 	
+	public Turma() {
+		super();
+	}
+
 	public Turma(Disciplina disciplina, String periodo) {
 		this.alunoNotas = new HashMap<Aluno, List<Integer>>();
 		this.disciplina = disciplina;
@@ -43,7 +50,7 @@ public class Turma {
 	public Disciplina getDisciplina() {
 		return disciplina;
 	}
-	public void setDisciplia(Disciplina disciplina) {
+	public void setDisciplina(Disciplina disciplina) {
 		this.disciplina = disciplina;
 	}
 	public String getPeriodo() {

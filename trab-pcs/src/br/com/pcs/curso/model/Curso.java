@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-@XStreamAlias("curso")
+@XmlRootElement
 public class Curso{
 
 	/*Relação de alunos matriculados, estruturada na forma de um map String -> Aluno,
@@ -24,7 +24,6 @@ public class Curso{
 	
 	//Relação de turmas, estruturada na forma de um conjunto de turmas.
 	private Set<Turma> turmas;
-	
 	
 	public Curso() {
 		matriculaAlunoMap = new HashMap<String, Aluno>();
@@ -69,8 +68,36 @@ public class Curso{
 	public Set<Turma> getTurmas() {
 		return turmas;
 	}
+
+	public void setMatriculaAlunoMap(Map<String, Aluno> matriculaAlunoMap) {
+		this.matriculaAlunoMap = matriculaAlunoMap;
+	}
+
+	public void setCodDisciplinaMap(Map<String, Disciplina> codDisciplinaMap) {
+		this.codDisciplinaMap = codDisciplinaMap;
+	}
+
+	public void setTurmas(Set<Turma> turmas) {
+		this.turmas = turmas;
+	}
 	
+	public void printCodDisciplinaMap() {
+		for(String cod: this.codDisciplinaMap.keySet()){
+			System.out.println("Codigo: " + cod + " Disciplina: " + this.codDisciplinaMap.get(cod).getNome());
+		}
+	}
 	
+	public void printMatriculaAlunoMap() {
+		for(String cod: this.matriculaAlunoMap.keySet()){
+			System.out.println("MATRICULA: " + cod + " ALUNO: " + this.matriculaAlunoMap.get(cod).getNome());
+		}
+	}
+	
+	public void printTurmas() {
+		for(Turma turma: turmas) {
+			System.out.println("Turmas: " + turma.getPeriodo());
+		}
+	}
 	
 	
 	
