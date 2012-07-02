@@ -7,8 +7,6 @@ import java.util.Set;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-
 @XmlRootElement
 public class Curso{
 
@@ -31,8 +29,9 @@ public class Curso{
 		turmas = new HashSet<Turma>();
 	}
 
-	public Disciplina registrarDisciplina(Disciplina disciplina){
-		codDisciplinaMap.put(disciplina.getCodigo(), disciplina);
+	public Disciplina registrarDisciplina(String codigoDisciplina, String nomeDisciplina){
+		Disciplina disciplina = new Disciplina(codigoDisciplina, nomeDisciplina);
+		codDisciplinaMap.put(codigoDisciplina, disciplina);
 		return disciplina;
 	}
 	
@@ -96,8 +95,11 @@ public class Curso{
 	public void printTurmas() {
 		for(Turma turma: turmas) {
 			System.out.println("Turmas: " + turma.getPeriodo());
+			System.out.println("Alunos: ");
+			turma.printAlunoNotas();
 		}
 	}
+	
 	
 	
 	

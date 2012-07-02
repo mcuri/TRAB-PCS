@@ -7,9 +7,6 @@ import java.util.Map;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-
-@XStreamAlias("turma")
 @XmlRootElement
 public class Turma {
 
@@ -18,7 +15,7 @@ public class Turma {
 	/*Alunos e suas notas, estruturado na forma de um map Aluno -> List<Integer>, onde a
 	chave é um objeto aluno e o valor de cada entrada é a lista de notas obtidas pelo
 	aluno naquela disciplina/período.*/
-	Map<Aluno, List<Integer>> alunoNotas;
+	private Map<Aluno, List<Integer>> alunoNotas;
 	
 	public Turma() {
 		super();
@@ -30,23 +27,20 @@ public class Turma {
 		this.periodo = periodo;
 	}
 	
-	/*List<Integer> readNotas(){
-		List<Integer> notas = new ArrayList<Integer>();
-		
-		//return notas; 
-	}*/
-	
 	public void adicionarAlunoNotas(Aluno aluno, List<Integer> notas){
 		alunoNotas.put(aluno, notas);
 	}
 	
 	public void printAlunoNotas(){
-		 for (Iterator it = alunoNotas.keySet().iterator(); it.hasNext();) { 
-			 Object key = it.next();  
-	         Object item = alunoNotas.get(key);
-	         System.out.println(item.toString());
-		 }
+		for(Aluno aluno: this.alunoNotas.keySet()){
+			System.out.println("ALUNO: " + aluno.getNome());
+			System.out.println("NOTAS:" );
+			for(Integer nota: alunoNotas.get(aluno)){
+				System.out.println(nota);
+			}
+		}
 	}
+	
 	public Disciplina getDisciplina() {
 		return disciplina;
 	}

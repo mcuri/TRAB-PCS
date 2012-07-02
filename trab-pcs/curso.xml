@@ -4,23 +4,12 @@
   <void property="codDisciplinaMap"> 
    <void method="put"> 
     <string>TIN0171</string> 
-    <object id="Disciplina0" class="br.com.pcs.curso.model.Disciplina"> 
+    <object class="br.com.pcs.curso.model.Disciplina"> 
      <void property="codigo"> 
       <string>TIN0171</string> 
      </void> 
      <void property="nome"> 
       <string>ANALISE DE ALGORITMOS</string> 
-     </void> 
-    </object> 
-   </void> 
-   <void method="put"> 
-    <string>TIN0170</string> 
-    <object id="Disciplina1" class="br.com.pcs.curso.model.Disciplina"> 
-     <void property="codigo"> 
-      <string>TIN0170</string> 
-     </void> 
-     <void property="nome"> 
-      <string>PROJETO E CONSTRUCAO DE SISTEMAS</string> 
      </void> 
     </object> 
    </void> 
@@ -48,20 +37,6 @@
      </void> 
      <void property="nome"> 
       <string>ALICE</string> 
-     </void> 
-     <void property="turmas"> 
-      <object class="java.util.HashSet"/> 
-     </void> 
-    </object> 
-   </void> 
-   <void method="put"> 
-    <string>20102244</string> 
-    <object class="br.com.pcs.curso.model.Aluno"> 
-     <void property="matricula"> 
-      <string>20102244</string> 
-     </void> 
-     <void property="nome"> 
-      <string>MARIA CLAUDIA DOS SANTOS</string> 
      </void> 
      <void property="turmas"> 
       <object class="java.util.HashSet"/> 
@@ -97,62 +72,6 @@
     </object> 
    </void> 
    <void method="put"> 
-    <string>20103355</string> 
-    <object class="br.com.pcs.curso.model.Aluno"> 
-     <void property="matricula"> 
-      <string>20103355</string> 
-     </void> 
-     <void property="nome"> 
-      <string>MARIANA CURI</string> 
-     </void> 
-     <void property="turmas"> 
-      <object class="java.util.HashSet"/> 
-     </void> 
-    </object> 
-   </void> 
-   <void method="put"> 
-    <string>20102233</string> 
-    <object class="br.com.pcs.curso.model.Aluno"> 
-     <void property="matricula"> 
-      <string>20102233</string> 
-     </void> 
-     <void property="nome"> 
-      <string>JOAO CARLOS FONSECA</string> 
-     </void> 
-     <void property="turmas"> 
-      <object class="java.util.HashSet"/> 
-     </void> 
-    </object> 
-   </void> 
-   <void method="put"> 
-    <string>20103366</string> 
-    <object class="br.com.pcs.curso.model.Aluno"> 
-     <void property="matricula"> 
-      <string>20103366</string> 
-     </void> 
-     <void property="nome"> 
-      <string>MICHELLE CASSIANO</string> 
-     </void> 
-     <void property="turmas"> 
-      <object class="java.util.HashSet"/> 
-     </void> 
-    </object> 
-   </void> 
-   <void method="put"> 
-    <string>20103345</string> 
-    <object class="br.com.pcs.curso.model.Aluno"> 
-     <void property="matricula"> 
-      <string>20103345</string> 
-     </void> 
-     <void property="nome"> 
-      <string>PEDRO CARLOS OLIVEIRA</string> 
-     </void> 
-     <void property="turmas"> 
-      <object class="java.util.HashSet"/> 
-     </void> 
-    </object> 
-   </void> 
-   <void method="put"> 
     <string>1254654</string> 
     <object class="br.com.pcs.curso.model.Aluno"> 
      <void property="matricula"> 
@@ -174,23 +93,17 @@
       <object class="java.util.HashMap"/> 
      </void> 
      <void property="disciplina"> 
-      <object idref="Disciplina0"/> 
+      <object class="br.com.pcs.curso.model.Disciplina"> 
+       <void property="codigo"> 
+        <string>TIN0171</string> 
+       </void> 
+       <void property="nome"> 
+        <string>ANALISE DE ALGORITMOS</string> 
+       </void> 
+      </object> 
      </void> 
      <void property="periodo"> 
       <string>2012.1</string> 
-     </void> 
-    </object> 
-   </void> 
-   <void method="add"> 
-    <object class="br.com.pcs.curso.model.Turma"> 
-     <void property="alunoNotas"> 
-      <object class="java.util.HashMap"/> 
-     </void> 
-     <void property="disciplina"> 
-      <object idref="Disciplina1"/> 
-     </void> 
-     <void property="periodo"> 
-      <string>2010.1</string> 
      </void> 
     </object> 
    </void> 

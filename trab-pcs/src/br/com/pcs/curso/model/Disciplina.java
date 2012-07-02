@@ -2,9 +2,6 @@ package br.com.pcs.curso.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-
-@XStreamAlias("disciplina")
 @XmlRootElement
 public class Disciplina {
 

@@ -27,28 +27,29 @@ public class ReadDisciplina {
 		
 		String lines[] = text.toString().split("_");
 
-		//Curso curso = new Curso();
+		for(String s: lines){
+			System.out.println(s);
+		}
 		
 		//reading disciplina line
 		Disciplina disciplina = readDisciplina(lines[0]);
-		//***curso.registrarDisciplina(disciplina);
 		
 		Turma turma = readTurma(lines[0], disciplina);
 		turma.setDisciplina(disciplina);
-		//***curso.registrarTurma(disciplina, turma.getPeriodo());
-
+		
 		//reading alunos lines
 		for(int i = 1; i < lines.length; i++){
 			Aluno aluno = readAluno(lines[i]);
-			System.out.println("Aluno: " + aluno.getNome() + " Matricula: " + aluno.getMatricula());
-			//***curso.registrarAluno(aluno.getMatricula(), aluno.getNome());
+			System.out.println("LENDO:     Aluno: " + aluno.getNome() + " Matricula: " + aluno.getMatricula());
 	
-			List<Integer> notas = readNotas(lines[i]);
-			turma.adicionarAlunoNotas(aluno, notas);
+			turma.adicionarAlunoNotas(aluno, readNotas(lines[i]));
 			aluno.addTurma(turma);
+		
+			System.out.println("Turmas: ");
+			aluno.printTurmas();
 		}
 		
-		System.out.println(turma.getDisciplina().getCodigo() + " " + turma.getPeriodo());
+		//System.out.println(turma.getDisciplina().getCodigo() + " " + turma.getPeriodo());
 		turma.printAlunoNotas();
 	
 		return turma;
@@ -59,9 +60,9 @@ public class ReadDisciplina {
 		return new Disciplina(disciplina[0], disciplina[1]);	
 	}
 	
-	Turma readTurma(String turmaLine, Disciplina d) throws IOException {
+	Turma readTurma(String turmaLine, Disciplina disciplina) throws IOException {
 		String turma[] = turmaLine.split(";");
-		return new Turma(d, turma[2]);
+		return new Turma(disciplina, turma[2]);
 	}
 	
 	Aluno readAluno(String alunoLine) throws IOException {

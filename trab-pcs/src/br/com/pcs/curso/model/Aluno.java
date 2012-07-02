@@ -5,9 +5,6 @@ import java.util.Set;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-
-@XStreamAlias("aluno")
 @XmlRootElement
 public class Aluno {
 
@@ -48,6 +45,11 @@ public class Aluno {
 
 	public void setTurmas(Set<Turma> turmas) {
 		this.turmas = turmas;
+	}
+	
+	public void printTurmas(){
+		for(Turma turma: turmas)
+			System.out.println(this.getNome() + " CURSOU TURMA " + turma.getPeriodo() + " " + turma.getDisciplina());
 	}
 	
 	
